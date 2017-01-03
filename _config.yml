@@ -60,7 +60,7 @@ kramdown:
   smart_quotes:   lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-  coderay:
+  syntax_highlighter_opts:
     coderay_wrap:              div
     coderay_line_numbers:      inline
     coderay_line_number_start: 1
