@@ -1,7 +1,7 @@
 # Site Settings
 title: 'Marcos Curvello'
 description: 'iOS Developer'
-url: 'http://marcoscurvello.com/'
+url: 'http://marcoscurvello.com'
 
 footer_text: 'Marcos Curvello <i class="fa fa-heart" aria-hidden="true"></i>'
 repo_url: 'https://github.com/marcoscurvello/marcoscurvello.github.io'
