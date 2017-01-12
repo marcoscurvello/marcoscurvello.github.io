@@ -1,0 +1,43 @@
+{% include header.html %}
+
+    <main>
+
+      <section class="one">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12 text-center intro-card">
+                    <img src="{{ site.data.global.url }}/img/me.jpg" alt="..." class="img-circle">
+                    <h1>Hey, I'm Marcos Curvello</h1>
+                    <p>an iOS developer based in Rio de Janeiro, Brazil.</p>
+                    <div class="social-links">
+                      <a class="link" href="{{ site.data.social.linkedin }}" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                      <a class="link" href="{{ site.data.social.facebook }}" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                      <a class="link" href="{{ site.data.social.twitter }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                      <a class="link" href="{{ site.data.social.github }}" target="_blank" title="{{ site.data.social.github }}"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+                      <a class="link" href="{{ site.data.social.stackoverflow }}" target="_blank" title="Stackoverflow"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                      <a class="link" href="{{ site.data.social.quora }}" target="_blank"><i class="fa fa-quora" aria-hidden="true"></i></a>
+                      <a class="link" href="{{ site.data.social.medium }}" target="_blank"><i class="fa fa-medium" aria-hidden="true"></i></a>
+                      <a class="link" href="mailto:{{ site.data.social.email }}" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="navigation">
+                      <a class="scroll-to-projects" href="#"><h1 class="text-muted">Projects</h1></a>
+                      <!-- <i class="divider-vertical"></i>
+                      <a class="link" href="/blog"><h1 class="text-muted">Blog</h1></a> -->
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section class="two">
+        <div class="container text-center heading">
+          <h1>Projects</h1>
+        </div>
+        {% for app in site.apps %}
+          {% include swoosh.html %}
+        {% endfor %}
+      </section>
+
+    </main>
+
+{% include footer.html %}
