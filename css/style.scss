@@ -73,11 +73,9 @@ nav.navbar {
   border-left: 1px solid #C5C5C5;
 }
 .one {  }
-
 .two {
   margin-top: 300px;
 }
-
 .heading {
   h1 {
     font-size: 3rem;
@@ -161,6 +159,7 @@ nav.navbar {
   background-color: #f7f7f7;
   overflow: scroll;
   overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
   white-space: nowrap;
   img {
     margin-right: 20px;
