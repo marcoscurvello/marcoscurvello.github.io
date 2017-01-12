@@ -2,7 +2,7 @@
 title: 'Messenger'
 date: 2015-08-31 13:26:34
 icon: '/img/messenger/icon.png'
-description: 'The Meplis Messenger, a messaging app based on XMPP connected to an Openfire server through a socket. The app aims to shorten the distance between doctors and patients allowing them to communicate through messages and exchange exam-files (MRI, Bone Scans, etc). The protected health information (PHI) data is stored and exchanged using the AES-256 encryption algorithm, successfully meeting HIPAA compliance.'
+description: 'The "Meplis Messenger" app was written mainly in Objective-C and built at its core using XMPP. The processing of considerable amounts of data from various rest APIs required properly threaded interfaces. All incoming and outgoing data and databases were encrypted (AES-256) in order to meet HIPAA compliance. The main goal of the app is the enable patients and doctors to more efficiently communicate through a secure channel where they can exchange exams and other kinds of files.'
 libs:
   - { url: 'https://github.com/realm/realm-cocoa', text: 'Realm' }
   - { url: 'https://github.com/RNCryptor/RNCryptor', text: 'RNCryptor' }

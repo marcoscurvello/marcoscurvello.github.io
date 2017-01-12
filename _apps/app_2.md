@@ -2,7 +2,7 @@
 title: 'Boa Vista Já'
 date: 2015-08-31 13:26:34
 icon: '/img/boavistaja/icon.jpg'
-description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita maiores quisquam id sunt, a architecto molestias velit, distinctio quidem non, nostrum provident quibusdam enim. Neque ipsam temporibus commodi facere minima.'
+description: 'The "Boa Vista Já" app was entirely written in Swift and at its core is powered by a WordPress rest API. The main goal of the app is to keep its audience informed through a direct channel to the content of the Brazilian news website.'
 libs:
   - { url: 'https://github.com/realm/realm-cocoa', text: 'Realm' }
   - { url: 'https://github.com/Moya/Moya', text: 'Moya' }
