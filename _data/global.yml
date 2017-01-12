@@ -1,10 +1,11 @@
 # Site Settings
-title: 'Scotch Jekyll Bootstrap'
-description: 'An Open-Source Bootstrap 3 Jekyll Theme by Scotch'
-url: 'http://scotch-io.github.io' # the base hostname & protocol for your site
-footer_text: 'This text is footer text. Footer text goes here.'
+title: 'Marcos Curvello'
+description: 'iOS Developer'
+url: 'http://marcoscurvello.com/'
+
+footer_text: 'Marcos Curvello <i class="fa fa-heart" aria-hidden="true"></i>'
+repo_url: 'https://github.com/marcoscurvello/marcoscurvello.github.io'
 
 # Admin Settings
 admin_name: 'Nicholas Cerminara'
 admin_email: 'nick@scotch.io'
-
