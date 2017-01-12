@@ -33,7 +33,7 @@ a {
     transition: all 225ms ease;
     color: $scotch-secondary;
 
-    &:hover { color: #4D79E8; }
+    &:hover { color: #4D79E8 !important; }
 }
 // .btn {
 //     text-transform: uppercase;
@@ -111,7 +111,7 @@ nav.navbar {
     position: relative;
     display: inline-block;
     color: black;
-    height: 35px;
+    height: 30px;
     width: 35px;
   }
 }
