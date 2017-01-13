@@ -1,32 +1,26 @@
 
-<!-- <div class="container-fluid "> -->
-  <div class="container applisious">
+        <div class="container applisious">
+          <div class="col-md-4 app-info">
+            <div class="artwork">
+              <img src="{{ site.data.global.url }}{{ app.icon }}"></img>
+              <span class="mask"></span>
+            </div>
+            <h3>{{ app.title }}</h3>
+            <p>{{ app.description}}</p>
 
-      <div class="col-md-4 app-info">
-        <div class="artwork">
-          <img src="{{ site.data.global.url }}{{ app.icon }}"></img>
-          <span class="mask"></span>
+            <h5>Open-Source libraries</h5>
+            <ul class="libs">
+            {% for lib in app.libs %}
+              <li><a href="{{ lib.url }}" target="_blank">{{ lib.text }}</a>
+            {% endfor %}
+            </ul>
+          </div>
+
+          <div class="col-md-8 outter-shots">
+            <div class="app-shots">
+              {% for image in app.screenshots %}
+                <img src="{{ site.data.global.url }}{{ image.url }}"></img>
+              {% endfor %}
+            </div>
+          </div>
         </div>
-        <h3>{{ app.title }}</h3>
-        <p>{{ app.description}}</p>
-
-        <h5>Open-Source libraries</h5>
-        <ul class="libs">
-        {% for lib in app.libs %}
-          <li><a href="{{ lib.url }}" target="_blank">{{ lib.text }}</a>
-        {% endfor %}
-        </ul>
-      </div>
-
-      <div class="col-md-8 outter-shots">
-        <div class="app-shots">
-          {% for image in app.screenshots %}
-            <img src="{{ site.data.global.url }}{{ image.url }}"></img>
-          {% endfor %}
-          <!-- <img src="{{ site.data.global.url }}/img/bvja_1.png" alt="Boa Vista Já"></img>
-          <img src="{{ site.data.global.url }}/img/bvja_2.png" alt="Boa Vista Já"></img> -->
-        </div>
-      </div>
-
-  </div>
-<!-- </div> -->
