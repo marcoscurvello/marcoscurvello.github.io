@@ -4,7 +4,7 @@
 
       <div class="col-md-4 app-info">
         <div class="artwork">
-          <img src="{{ site.data.global.url }}{{ app.icon }}" alt="Boa Vista Já"></img>
+          <img src="{{ site.data.global.url }}{{ app.icon }}"></img>
           <span class="mask"></span>
         </div>
         <h3>{{ app.title }}</h3>
@@ -21,7 +21,7 @@
       <div class="col-md-8 outter-shots">
         <div class="app-shots">
           {% for image in app.screenshots %}
-            <img src="{{ site.data.global.url }}{{ image.url }}" alt="Boa Vista Já"></img>
+            <img src="{{ site.data.global.url }}{{ image.url }}"></img>
           {% endfor %}
           <!-- <img src="{{ site.data.global.url }}/img/bvja_1.png" alt="Boa Vista Já"></img>
           <img src="{{ site.data.global.url }}/img/bvja_2.png" alt="Boa Vista Já"></img> -->
