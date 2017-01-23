@@ -21,6 +21,8 @@ body {
     font-size: 18px;
     line-height: 30px;
     -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    overflow-x: hidden;
 }
 p {
     margin-bottom: 30px;
