@@ -21,9 +21,8 @@ body {
     font-size: 18px;
     line-height: 30px;
     -webkit-font-smoothing: antialiased;
-    overflow: hidden;
-    overflow-x: hidden;
 }
+
 p {
     margin-bottom: 30px;
 }
@@ -204,7 +203,6 @@ nav.navbar {
   }
 }
 .title-group {
-  // background-color: orange;
   text-align: center;
   padding: 0 15px;
   margin: 50px 0 100px;
@@ -489,7 +487,7 @@ pre {
       margin: 0;
       padding: 0;
       margin-left: -15px;
-      width: 110% !important;
+      width: 108.8% !important;
     }
     .app-shots {
       min-height: 600px;
