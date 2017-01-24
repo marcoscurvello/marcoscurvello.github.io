@@ -2,19 +2,13 @@
 ---
 @import '../_sass/bootstrap';
 @import '../_sass/syntax-highlighting';
-
-
 $scotch-primary: rgb(255, 69, 69);
 $scotch-secondary: #FF7B7B;
-
 %oswald { font-family: 'Oswald', sans-serif; }
 %roboto { font-family: 'Roboto Condensed', sans-serif; }
-
+button:focus {outline:0 !important;}
 section {
-  margin: 100px 0;
-}
-div {
-  // border: 1px solid red;
+  margin-top: 100px;
 }
 body {
     @extend %roboto;
@@ -22,7 +16,6 @@ body {
     line-height: 30px;
     -webkit-font-smoothing: antialiased;
 }
-
 p {
     margin-bottom: 30px;
 }
@@ -34,11 +27,6 @@ a {
     color: #23527C;
     &:hover { color: #4D79E8 !important; }
 }
-// .btn {
-//     text-transform: uppercase;
-//     font-weight: 400;
-//     @extend %oswald;
-// }
 h1, h2, h3, h4, h5, h6 { @extend %oswald; }
 ::selection {
     background: #086AFF;
@@ -72,17 +60,7 @@ nav.navbar {
   margin: 0 5px 0 0;
   border-left: 1px solid #C5C5C5;
 }
-.one {  }
-.two {
-  margin-top: 300px;
-}
-.heading {
-  h1 {
-    font-size: 3rem;
-    font-weight: 300;
-    opacity: 0.38;
-  }
-}
+
 .intro-card {
   img {
     width: 200px;
@@ -114,13 +92,26 @@ nav.navbar {
 }
 .navigation {
   margin-top: 50px;
-  a {
+  button {
     text-decoration: none;
     position: relative;
     display: inline-block;
     color: black;
-    width: 140px;
+    // width: 140px;
     height: auto;
+    font-size: 20px;
+    color: gray;
+  }
+  button:hover {
+    background-color: transparent;
+    color: gray;
+  }
+  button:active, button:focus {
+    background-color: transparent !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    color: gray !important;
+    border-color: gray !important;
   }
   h1 {
     font-family: 'Roboto Condensed', sans-serif;
@@ -131,12 +122,9 @@ nav.navbar {
     opacity: 0.87;
   }
 }
-.heading {
-  margin-bottom: -100px;
-}
-
 .applisious {
-  margin-top: 150px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .app-info {
   h3, h4, h5 {
@@ -473,11 +461,11 @@ pre {
         background-size: 135px 135px;
       }
     }
-    .heading {
-      margin-bottom: 0;
+    section.one {
+      margin-top: 80px;
     }
     .applisious {
-      margin-top: 100px;
+      padding-top: 30px;
     }
     .app-info {
       padding-left: 10px;
@@ -509,6 +497,9 @@ and (orientation:portrait)
   section {
     margin: 50px 0;
   }
+  section.two {
+    margin-top: 88px;
+  }
   .intro-card {
     img {
       width: 150px;
@@ -539,12 +530,6 @@ and (orientation:portrait)
       width: 90px;
     }
   }
-  .heading {
-    margin-bottom: -50px;
-    h1 {
-      color: #C5C5C5;
-    }
-  }
   .artwork {
     img {
       width: 115px;
@@ -556,10 +541,15 @@ and (orientation:portrait)
       background-size: 115px 115px;
     }
   }
+  .outter-shots {
+    width: 109.9% !important;
+    background-color: orange !important;
+  }
   .app-shots {
     min-height: 500px;
     min-width: 100%;
     margin-top: 10px;
+    background-color: orange !important;
     img {
       max-height: 500px;
     }
