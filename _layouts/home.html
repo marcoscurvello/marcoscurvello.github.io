@@ -18,7 +18,7 @@
                       {% endfor %}
                     </div>
                     <div class="navigation">
-                      <a class="scroll-to-projects" href="#"><h1 class="text-muted">Projects</h1></a>
+                      <button type="button" class="scroll-to-projects btn btn-default btn-lg">projects</button>
                     </div>
                   </div>
               </div>
@@ -26,9 +26,6 @@
       </section>
 
       <section class="two">
-        <div class="container text-center heading">
-          <h1>Projects</h1>
-        </div>
         {% for app in site.apps %}
           {% include swoosh.html %}
         {% endfor %}
