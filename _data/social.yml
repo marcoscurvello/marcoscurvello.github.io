@@ -1,8 +1,6 @@
-  - { title: 'linkedin', url: 'https://linkedin.com/in/marcoscurvello', icon: 'fa fa-linkedin-square' }
-  - { title: 'facebook', url: 'https://www.facebook.com/curvello', icon: 'fa fa-facebook-square' }
-  - { title: 'twitter', url: 'https://twitter.com/mrcurvello', icon: 'fa fa-twitter' }
   - { title: 'github', url: 'https://github.com/marcoscurvello/', icon: 'fa fa-github-alt' }
+  - { title: 'twitter', url: 'https://twitter.com/mrcurvello', icon: 'fa fa-twitter' }
+  - { title: 'strava', url: 'https://www.strava.com/athletes/6961264', icon: 'fa fa-bicycle' }
+  - { title: 'linkedin', url: 'https://linkedin.com/in/marcoscurvello', icon: 'fa fa-linkedin-square' }
   - { title: 'stackoverflow', url: 'http://stackoverflow.com/users/2285233/marcos-curvello', icon: 'fa fa-stack-overflow' }
-  - { title: 'quora', url: 'https://www.quora.com/profile/Marcos-Curvello', icon: 'fa fa-quora' }
-  - { title: 'medium', url: 'https://medium.com/@marcoscurvello', icon: 'fa fa-medium' }
-  - { title: 'email', url: 'hello@marcoscurvello.com', icon: 'fa fa-envelope' }
+  - { title: 'email', url: 'mrcurvello@gmail.com', icon: 'fa fa-envelope' }
