@@ -25,3 +25,7 @@ group :jekyll_plugins do
    gem 'pygments.rb'
    gem 'hawkins'
 end
+
+gem 'eventmachine'
+gem "webrick", "~> 1.7"
+gem "kramdown-parser-gfm"
