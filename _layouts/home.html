@@ -11,9 +11,13 @@
                     <div class="social-links">
                       {% for network in site.data.social %}
                       {% if network.title == 'email' %}
-                      <a class="link" href="mailto:{{ network.url }}" target="_blank" onclick="ga('send','event','socialLink','click','{{ network.title }}');"><i class="{{ network.icon }}" aria-hidden="true"></i></a>
+                      <a class="link" href="mailto:{{ network.url }}" target="_blank" onclick="ga('send','event','socialLink','click','{{ network.title }}');">
+                        <i class="{{ network.icon }}" aria-hidden="true"></i>
+                      </a>
                       {% else %}
-                      <a class="link" href="{{ network.url }}" target="_blank" onclick="ga('send','event','socialLink','click','{{ network.title }}');"><i class="{{ network.icon }}" aria-hidden="true"></i></a>
+                      <a class="link" href="{{ network.url }}" target="_blank" title="{{ network.title | capitalize }}" onclick="ga('send','event','socialLink','click','{{ network.title }}');">
+                        <i class="{{ network.icon }}" aria-hidden="true"></i>
+                      </a>
                       {% endif %}
                       {% endfor %}
                     </div>
