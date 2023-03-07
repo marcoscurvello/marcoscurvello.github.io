@@ -4,4 +4,4 @@
   - { title: 'goodreads', url: 'https://www.goodreads.com/marcoscurvello', icon: 'fa fa-book' }
   - { title: 'stackoverflow', url: 'http://stackoverflow.com/users/2285233/marcos-curvello', icon: 'fa fa-stack-overflow' }
   - { title: 'linkedin', url: 'https://linkedin.com/in/marcoscurvello', icon: 'fa fa-linkedin-square' }
-  - { title: 'email', url: 'mrcurvello@gmail.com', icon: 'fa fa-envelope' }
+  - { title: 'email', url: 'hi@marcoscurvello.com', icon: 'fa fa-envelope' }
