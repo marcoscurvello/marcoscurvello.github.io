@@ -1,7 +1,7 @@
 {
   "name": "marcoscurvello.io",
   "version": "1.0.0",
-  "description": "Copyright (c) 2016-2017 Marcos Curvello",
+  "description": "Copyright (c) 2016-2023 Marcos Curvello",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
