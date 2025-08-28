@@ -69,5 +69,8 @@ kramdown:
     coderay_bold_every:        10
     coderay_css:               style
 
+sass:
+  quiet_deps: true
+  silence_deprecations: [import, slash-div, mixed-decls, global-builtin, color-functions]
 
 include: ['_pages']
