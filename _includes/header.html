@@ -36,8 +36,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <!-- RSS -->
-    <link rel="alternate" type="application/rss+xml" title="{{ site.data.global.title }} - {{ site.data.global.description }}" href="{{ site.data.global.url }}/feed.xml">
-    <link rel="alternate" type="application/atom+xml" title="{{ site.data.global.title }} - {{ site.data.global.description }}" href="{{ site.data.global.url }}/atom.xml">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.data.global.title }} - {{ site.data.global.description }}" href="{{ site.baseurl }}/feed.xml">
+    <link rel="alternate" type="application/atom+xml" title="{{ site.data.global.title }} - {{ site.data.global.description }}" href="{{ site.baseurl }}/atom.xml">
 
     <!-- Favicons -->
     <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64 96x96" href="../favicon.ico" type="image/x-icon">
@@ -62,10 +62,10 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ site.data.global.url }}/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css?v={{ site.time | date: '%s' }}">
     <!--[if lt IE 9]>
         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="{{ site.data.global.url }}/js/respond.min.js"></script>
+        <script src="{{ site.baseurl }}/js/respond.min.js"></script>
     <![endif]-->
 
 </head>

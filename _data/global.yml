@@ -1,7 +1,7 @@
 # Site Settings
 title: 'Marcos Curvello'
 domain: marcoscurvello.com       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://marcoscurvello.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+url: https://marcoscurvello.github.io  # the base hostname and protocol for your site
 description: 'iOS Developer'
 
 footer_text: 'Marcos Curvello'
