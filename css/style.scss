@@ -2,52 +2,104 @@
 ---
 @import '../_sass/bootstrap';
 @import '../_sass/syntax-highlighting';
+
+// ========================================
+// Variables & Configuration
+// ========================================
+
+// Colors
 $scotch-primary: rgb(255, 69, 69);
 $scotch-secondary: #FF7B7B;
+$link-color: #23527C;
+$link-hover: #4D79E8;
+$text-gray: gray;
+$selection-bg: #086AFF;
+$bg-light: #f7f7f7;
+
+// Typography
 %oswald { font-family: 'Oswald', sans-serif; }
 %roboto { font-family: 'Roboto Condensed', sans-serif; }
-button:focus {outline:0 !important;}
-section {
-  margin-top: 100px;
-}
+
+// Spacing - Desktop
+$section-margin-desktop: 150px;
+$section-margin-desktop-lg: 220px;
+$section-margin-mobile: 80px;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-desktop-lg: 1200px;
+// ========================================
+// Base Styles
+// ========================================
+
 body {
     @extend %roboto;
     font-size: 18px;
     line-height: 30px;
     -webkit-font-smoothing: antialiased;
 }
+
+section {
+  margin-top: 100px;
+}
+// ========================================
+// Components
+// ========================================
+
+// Buttons
 button {
   text-decoration: none !important;
   display: inline-block !important;
   font-size: 20px !important;
-  color: gray !important;
+  color: $text-gray !important;
+
+  &:hover {
+    background-color: transparent !important;
+    color: $text-gray !important;
+  }
+
+  &:active,
+  &:focus {
+    background-color: transparent !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    color: $text-gray !important;
+    border-color: $text-gray !important;
+    outline: 0 !important;
+  }
 }
-button:hover {
-  background-color: transparent !important;
-  color: gray !important;
-}
-button:active, button:focus {
-  background-color: transparent !important;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  color: gray !important;
-  border-color: gray !important;
-}
+// Typography
 p {
     margin-bottom: 30px;
 }
-section, header, footer, main, article, nav, aside { position: relative; }
+
+h1, h2, h3, h4, h5, h6 {
+    @extend %oswald;
+}
+
+// Links
 a {
     outline: none !important;
     text-decoration: none !important;
     transition: all 225ms ease;
-    color: #23527C;
-    &:hover { color: #4D79E8 !important; }
+    color: $link-color;
+
+    &:hover {
+        color: $link-hover !important;
+    }
 }
-h1, h2, h3, h4, h5, h6 { @extend %oswald; }
+
+// Selection
 ::selection {
-    background: #086AFF;
+    background: $selection-bg;
     color: #fff;
+}
+
+// Layout helpers
+section, header, footer, main, article, nav, aside {
+    position: relative;
 }
 nav.navbar {
     margin: 0;
@@ -78,22 +130,30 @@ nav.navbar {
   border-left: 1px solid #C5C5C5;
 }
 
+// ========================================
+// Page Sections
+// ========================================
+
+// Profile/Intro Card
 .intro-card {
   img {
     width: 200px;
     height: 200px;
   }
+
   h1 {
     font-size: 4rem;
     letter-spacing: -1px;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
   }
+
   i {
     font-size: 20px;
   }
+
   p {
-    color: gray;
+    color: $text-gray;
   }
 }
 .social-links {
@@ -137,26 +197,25 @@ nav.navbar {
     font-size: 16px;
   }
 }
+// App Screenshots Gallery
 .app-shots {
   min-height: 700px;
-  padding: 20px 20px;
-  background-color: #f7f7f7;
-  overflow: scroll;
-  overflow-x: scroll;
+  padding: 20px;
+  background-color: $bg-light;
+  overflow-x: auto; // Better than overflow: scroll
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   white-space: nowrap;
+
   img {
     margin-right: 20px;
     max-height: 700px;
-    -webkit-box-shadow: 0 3px 5px rgba(0,0,0,.3);
-    -moz-box-shadow: #999 0 3px 5px;
-    border-color: #a2a2a2\9;
-  }
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
 
-  img:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
-
 }
 
 .artwork {
@@ -539,13 +598,11 @@ and (orientation:portrait)
   }
   .outter-shots {
     width: 109.9% !important;
-    background-color: orange !important;
   }
   .app-shots {
     min-height: 500px;
     min-width: 100%;
     margin-top: 10px;
-    background-color: orange !important;
     img {
       max-height: 500px;
     }
@@ -555,5 +612,37 @@ and (orientation:portrait)
     p {
       font-size: 14px;
     }
+  }
+}
+
+// ========================================
+// Responsive Design - Desktop Overrides
+// ========================================
+// Placed after mobile rules to ensure proper cascade
+
+@media only screen and (min-width: #{$breakpoint-mobile + 1px}) {
+  section.one {
+    margin-top: $section-margin-desktop !important;
+  }
+  section.two {
+    margin-top: 120px !important;
+  }
+}
+
+@media only screen and (min-width: #{$breakpoint-desktop}) {
+  section.one {
+    margin-top: 160px !important;
+  }
+  section.two {
+    margin-top: 120px !important;
+  }
+}
+
+@media only screen and (min-width: #{$breakpoint-desktop-lg}) {
+  section.one {
+    margin-top: $section-margin-desktop-lg !important;
+  }
+  section.two {
+    margin-top: 120px !important;
   }
 }
