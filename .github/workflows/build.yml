@@ -24,7 +24,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1.1' # Match your .ruby-version file
+          ruby-version: '3.3.5' # Updated for better compatibility
           bundler-cache: true # This caches dependencies for faster builds
       
       - name: Setup Pages
