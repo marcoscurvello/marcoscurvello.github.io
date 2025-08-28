@@ -24,12 +24,15 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3.5' # Updated for better compatibility
+          ruby-version: '3.3.5' # Match local version
           bundler-cache: true # This caches dependencies for faster builds
       
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+      
+      - name: Install dependencies
+        run: bundle install
       
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"

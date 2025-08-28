@@ -28,3 +28,6 @@ end
 
 gem "webrick", "~> 1.8.2"
 gem "kramdown-parser-gfm", "~> 1.1"
+
+# Modern Sass compiler that supports @use syntax
+gem "jekyll-sass-converter", "~> 3.0"
