@@ -2,7 +2,7 @@
         <div class="container applisious">
           <div class="col-md-4 app-info">
             <div class="artwork">
-              <img src="{{ site.data.global.url }}{{ app.icon }}"></img>
+              <img src="{{ site.baseurl }}{{ app.icon }}"></img>
               <span class="mask"></span>
             </div>
             <h3>{{ app.title }}</h3>
@@ -19,7 +19,7 @@
           <div class="col-md-8 outter-shots">
             <div class="app-shots">
               {% for image in app.screenshots %}
-                <img src="{{ site.data.global.url }}{{ image.url }}"></img>
+                <img src="{{ site.baseurl }}{{ image.url }}"></img>
               {% endfor %}
             </div>
           </div>
