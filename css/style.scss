@@ -4,7 +4,21 @@
 @import '../_sass/syntax-highlighting';
 
 // ========================================
+// Bootstrap Overrides
+// ========================================
+
+// Reset html font-size to standard 16px base (Bootstrap 3 uses 10px)
+// This makes rem calculations more intuitive: 1rem = 16px
+html {
+  font-size: 16px; // Override Bootstrap 3's 10px base
+}
+
+// ========================================
 // Variables & Configuration
+// ========================================
+
+// ========================================
+// Design Tokens / Variables
 // ========================================
 
 // Colors
@@ -16,9 +30,82 @@ $text-gray: gray;
 $selection-bg: #086AFF;
 $bg-light: #f7f7f7;
 
-// Typography
-%oswald { font-family: 'Oswald', sans-serif; }
+// Additional color tokens for typography
+$text-primary: #1a1a1a;  // Near black for better readability
+$text-secondary: #4a4a4a;  // Medium gray
+$text-muted: #6c757d;  // Muted gray
+$text-light: #999;  // Light gray
+
+// ========================================
+// Typography System
+// ========================================
+
+// Font Stacks
+$font-stack-system: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-stack-heading: $font-stack-system;
+$font-stack-body: 'Roboto Condensed', $font-stack-system;
+$font-stack-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+
+// Font Weights
+$font-weights: (
+  'thin': 100,
+  'extralight': 200,
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+  'extrabold': 800,
+  'black': 900
+);
+
+// Font Sizes - Using modular scale (1.25 ratio)
+// Now using standard 16px base (1rem = 16px)
+$font-sizes: (
+  'xs': 0.75rem,     // 12px
+  'sm': 0.875rem,    // 14px
+  'base': 1rem,      // 16px
+  'lg': 1.125rem,    // 18px
+  'xl': 1.25rem,     // 20px
+  '2xl': 1.5rem,     // 24px
+  '3xl': 1.875rem,   // 30px
+  '4xl': 2.25rem,    // 36px
+  '5xl': 3rem,       // 48px
+  '6xl': 4rem        // 64px
+);
+
+// Line Heights
+$line-heights: (
+  'tight': 1.25,
+  'snug': 1.375,
+  'normal': 1.5,
+  'relaxed': 1.625,
+  'loose': 2
+);
+
+// Letter Spacing
+$letter-spacings: (
+  'tighter': -0.05em,
+  'tight': -0.025em,
+  'normal': 0,
+  'wide': 0.025em,
+  'wider': 0.05em,
+  'widest': 0.1em
+);
+
+// Typography Classes (for reuse)
+%font-system { font-family: $font-stack-system; }
+%font-heading { font-family: $font-stack-heading; }
+%font-body { font-family: $font-stack-body; }
+
+// Legacy support (keeping these for backward compatibility)
+%oswald { font-family: $font-stack-system; }
 %roboto { font-family: 'Roboto Condensed', sans-serif; }
+%system-font { font-family: $font-stack-system; }
+
+// ========================================
+// Spacing System
+// ========================================
 
 // Spacing - Desktop
 $section-margin-desktop: 150px;
@@ -30,15 +117,95 @@ $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 992px;
 $breakpoint-desktop-lg: 1200px;
+
+// ========================================
+// Mixins & Functions
+// ========================================
+
+// Get values from maps easily
+@function font-size($size) {
+  @return map-get($font-sizes, $size);
+}
+
+@function font-weight($weight) {
+  @return map-get($font-weights, $weight);
+}
+
+@function line-height($height) {
+  @return map-get($line-heights, $height);
+}
+
+@function letter-spacing($spacing) {
+  @return map-get($letter-spacings, $spacing);
+}
+
+// Typography Mixins for consistent text styles
+@mixin text-style($size: 'base', $weight: 'regular', $line: 'normal', $spacing: 'normal') {
+  font-size: font-size($size);
+  font-weight: font-weight($weight);
+  line-height: line-height($line);
+  letter-spacing: letter-spacing($spacing);
+}
+
+// Heading styles mixin
+@mixin heading($level: 1) {
+  @extend %font-heading;
+  font-weight: font-weight('bold');
+  line-height: line-height('tight');
+  letter-spacing: letter-spacing('tight');
+  color: $text-primary;
+
+  @if $level == 1 {
+    font-size: font-size('5xl');
+  } @else if $level == 2 {
+    font-size: font-size('4xl');
+  } @else if $level == 3 {
+    font-size: font-size('3xl');
+  } @else if $level == 4 {
+    font-size: font-size('2xl');
+  } @else if $level == 5 {
+    font-size: font-size('xl');
+  } @else if $level == 6 {
+    font-size: font-size('lg');
+  }
+}
+
+// Retina/High-DPI Display Mixin
+@mixin retina {
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
 // ========================================
 // Base Styles
 // ========================================
 
 body {
-    @extend %roboto;
+    @extend %system-font;  // Use San Francisco on Apple devices, fallback to system fonts
     font-size: 18px;
     line-height: 30px;
-    -webkit-font-smoothing: antialiased;
+
+    // Font Rendering Optimization for Retina/High-DPI displays
+    -webkit-font-smoothing: antialiased;  // Makes fonts slightly thinner/crisper on macOS
+    -moz-osx-font-smoothing: grayscale;   // Firefox on macOS
+    text-rendering: optimizeLegibility;   // Enables ligatures and kerning
+
+    // Improve rendering on Windows
+    -webkit-text-stroke-width: 0.04px;    // Subtle stroke for smoother edges
+
+    // Better font metrics
+    font-feature-settings: "kern" 1;      // Enable kerning
+    font-kerning: normal;                 // Better letter spacing
+
+    // Prevent font boosting on mobile
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 section {
@@ -177,24 +344,59 @@ nav.navbar {
     padding: 5px;
     opacity: 0.87;
   }
+  .scroll-to-projects {
+    font-size: font-size('base') !important;  // 18px - override the generic button style
+    // Change to: 'base' (16px), 'lg' (18px), 'xl' (20px), '2xl' (24px)
+  }
 }
 .applisious {
   padding-top: 100px;
   padding-bottom: 100px;
 }
 .app-info {
-  h3, h4, h5 {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+  h3 {
+    @extend %font-system;
+    @include text-style('3xl', 'extrabold');
+    color: $text-primary;
+    margin-bottom: 1rem;
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      font-size: inherit;  // Ensure link inherits h3 font size
+      font-weight: inherit;  // Ensure link inherits h3 font weight
+      line-height: inherit;  // Ensure link inherits h3 line height
+      letter-spacing: inherit;  // Ensure link inherits h3 letter spacing
+      
+      &:hover {
+        color: $link-hover;
+        text-decoration: none;
+      }
+    }
+  }
+  h4, h5 {
+    @extend %font-system;
+    font-size: font-size('lg');  // 18px
+    font-weight: font-weight('bold');
+    color: $text-primary;
     opacity: 0.87;
   }
-  p {
-    font-size: 16px;
-    line-height: 26px;
-    opacity: 0.54;
+  .app-description p {
+    font-size: font-size('lg');  // 18px - readable size
+    line-height: line-height('relaxed');  // 1.625 for good readability
+    font-weight: font-weight('regular');
+    color: $text-secondary;
+    margin-bottom: 1.5rem;
   }
   a {
-    font-size: 16px;
+    font-size: font-size('base');  // 16px
+    color: $link-color;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $link-hover;
+    }
   }
 }
 // App Screenshots Gallery
