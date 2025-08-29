@@ -1,24 +1,14 @@
 ---
-title: 'Messenger'
-date: 2015-08-31 13:26:34
-icon: '/img/messenger/icon.png'
-description: 'The "Meplis Messenger" app was written mainly in Objective-C and built at its core using XMPP. The processing of considerable amounts of data from various rest APIs required properly threaded interfaces. All incoming and outgoing data and databases were encrypted (AES-256) in order to meet HIPAA compliance. The main goal of the app is to enable patients and doctors to more efficiently communicate through a secure channel where they can exchange exams and other kinds of files.'
+title: 'SimInspector'
+date: 2025-08-28 15:26:34
+icon: '/img/siminspector/logo.png'
+website: 'https://siminspector.com'
+description: 'I developed **SimInspector** to solve a problem I faced daily: navigating iOS simulator data through terminal commands was painful. Built with SwiftUI and AppKit, this native macOS tool features real-time file monitoring powered by FSEvents, comprehensive simulator management, Quick Look integration and many more features. I focused on creating an experience that fellow developers and QAs could use immediately without any learning curve.'
 libs:
-  - { url: 'https://github.com/realm/realm-cocoa', text: 'Realm' }
-  - { url: 'https://github.com/RNCryptor/RNCryptor', text: 'RNCryptor' }
-  - { url: 'https://github.com/AFNetworking/AFNetworking', text: 'AFNetworking' }
-  - { url: 'https://github.com/robbiehanson/XMPPFramework', text: 'XMPPFramework' }
-  - { url: 'https://github.com/jessesquires/JSQMessagesViewController', text: 'JSQMessagesViewController' }
+  - { url: 'https://github.com/RevenueCat/purchases-ios-spm', text: 'RevenueCat' }
+  - { url: 'https://github.com/sparkle-project/Sparkle', text: 'Sparkle' }
 
 screenshots:
-  - { url: '/img/messenger/shot_0.jpg' }
-  - { url: '/img/messenger/shot_1.jpg' }
-  - { url: '/img/messenger/shot_2.jpg' }
-  - { url: '/img/messenger/shot_3.jpg' }
-  - { url: '/img/messenger/shot_4.jpg' }
-  - { url: '/img/messenger/shot_5.jpg' }
-  - { url: '/img/messenger/shot_6.jpg' }
-  - { url: '/img/messenger/shot_7.jpg' }
-  - { url: '/img/messenger/shot_8.jpg' }
+  - { url: '/img/siminspector/screenshot.png' }
 
 ---

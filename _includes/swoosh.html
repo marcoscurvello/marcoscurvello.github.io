@@ -5,8 +5,14 @@
               <img src="{{ site.baseurl }}{{ app.icon }}"></img>
               <span class="mask"></span>
             </div>
-            <h3>{{ app.title }}</h3>
-            <p>{{ app.description}}</p>
+            <h3>
+              {% if app.website %}
+                <a href="{{ app.website }}" target="_blank">{{ app.title }}</a>
+              {% else %}
+                {{ app.title }}
+              {% endif %}
+            </h3>
+            <div class="app-description">{{ app.description | markdownify }}</div>
 
             <h5>Open-Source libraries</h5>
             <ul class="libs">
