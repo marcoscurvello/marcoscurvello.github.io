@@ -1,5 +1,4 @@
 {% include header.html %}
-
     <main>
       <section class="one">
           <div class="container">
@@ -7,7 +6,7 @@
                   <div class="col-md-12 text-center intro-card">
                     <img src="http://www.gravatar.com/avatar/4d49be66fc853f7179587fa776fc70d0?s=500" alt="Marcos Curvello" class="img-circle">
                     <h1>Hey, I'm Marcos Curvello</h1>
-                    <p>an iOS developer based in Rio de Janeiro, Brazil.</p>
+                    <p>a software engineer from Rio de Janeiro, currently based in Portugal.</p>
                     <div class="social-links">
                       {% for network in site.data.social %}
                       {% if network.title == 'email' %}
@@ -30,10 +29,10 @@
       </section>
 
       <section class="two">
-        {% for app in site.apps %}
+        {% assign sorted_apps = site.apps | sort: 'path' %}
+        {% for app in sorted_apps %}
           {% include swoosh.html %}
         {% endfor %}
       </section>
     </main>
-
 {% include footer.html %}
