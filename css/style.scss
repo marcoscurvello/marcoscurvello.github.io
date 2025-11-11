@@ -71,7 +71,15 @@ $font-sizes: (
   '3xl': 1.875rem,   // 30px
   '4xl': 2.25rem,    // 36px
   '5xl': 3rem,       // 48px
-  '6xl': 4rem        // 64px
+  '6xl': 4rem,       // 64px
+  
+  // Mobile-optimized sizes
+  'mobile-sm': 1rem,      // 16px - compact mobile body
+  'mobile-base': 1.125rem, // 18px - readable mobile body  
+  'mobile-lg': 1.375rem,   // 22px - mobile subheading
+  'mobile-xl': 1.75rem,    // 28px - mobile heading
+  'mobile-2xl': 2.25rem,   // 36px - large mobile heading
+  'mobile-3xl': 2.75rem    // 44px - hero mobile heading
 );
 
 // Line Heights
@@ -688,14 +696,16 @@ pre {
         height: 150px;
       }
       h1 {
-        font-size: 3rem;
-        letter-spacing: -1px;
+        font-size: font-size('mobile-2xl'); // 36px - much more compact
+        letter-spacing: -0.5px;
+        line-height: line-height('tight');
       }
       i {
-        font-size: 20px;
+        font-size: 18px; // Slightly smaller icons
       }
       p {
-        font-size: 1.6rem;
+        font-size: font-size('mobile-base'); // 18px - more readable than 25.6px
+        line-height: line-height('normal');
       }
     }
     .navigation {
@@ -763,14 +773,18 @@ and (orientation:portrait)
       height: 150px;
     }
     h1 {
-      font-size: 2.6rem;
-      letter-spacing: -1px;
+      font-size: font-size('mobile-xl'); // 28px - optimal for iPhone screens
+      letter-spacing: -0.3px;
+      line-height: line-height('tight');
+      margin-bottom: 0.75rem; // Tighter spacing
     }
     i {
-      font-size: 20px;
+      font-size: 16px; // Smaller icons for compact layout
     }
     p {
-      font-size: 1.45rem;
+      font-size: font-size('mobile-sm'); // 16px - compact but readable
+      line-height: line-height('normal');
+      margin-bottom: 1rem; // Tighter spacing
     }
   }
   .social-links {
@@ -816,6 +830,58 @@ and (orientation:portrait)
     }
   }
 }
+
+// ========================================
+// Modern iPhone Optimizations (iPhone 14 Pro, 15 Pro, 16 Pro)
+// ========================================
+// Target modern iPhones with larger screens but high pixel density
+@media only screen 
+and (max-width: 430px) 
+and (-webkit-device-pixel-ratio: 3) {
+  .intro-card {
+    h1 {
+      font-size: font-size('mobile-lg'); // 22px - fits better on all modern iPhones
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: font-size('mobile-sm'); // 16px
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+    }
+    img {
+      width: 140px;
+      height: 140px;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .navigation {
+    margin-top: 20px;
+    button {
+      font-size: font-size('mobile-sm') !important; // 16px for button
+      padding: 8px 20px !important;
+    }
+  }
+
+  .social-links {
+    margin: 1rem 0;
+    a {
+      width: 30px;
+      height: 28px;
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+  
+  section.one {
+    margin-top: 60px !important;
+    padding-top: 2rem;
+  }
+}
+
 
 // ========================================
 // Responsive Design - Desktop Overrides
